@@ -2,20 +2,20 @@
 /* EN LAS VARIABLES LET SE PUEDE DECLAR<R SIN ASIGNAR VALOR */
 
 /* declarar */
-edad = 30 /* asignar valor */
+/* edad = 30 */ /* asignar valor */
 
 
 /* 2x1 declarar y asignar valor en la misma linea */
-let peso = 75
+/* let peso = 75 */
 
-console.log(edad) /* llamo a la variable edad */
-alert(edad)/* tambien llamo a la variable */
+/* console.log(edad) */ /* llamo a la variable edad */
+/* alert(edad) *//* tambien llamo a la variable */
 
-console.log(edad + 4) /*  esto d 34,UTILICE EL VALOR DE LA VARIABLE */
+/* console.log(edad + 4)  *//*  esto d 34,UTILICE EL VALOR DE LA VARIABLE */
 
 /* EN LAS CONSTANTES SIEMPRE SE ASIGNA Y DECLARA A LA VCEZ  */
 
-const altura = 175
+/* const altura = 175 */
 
 /* tipos de datos 1010101010110100001111
 
@@ -36,34 +36,52 @@ Caracteres
 /* ejemplo de variables con tipos de datos numericos
 */
 
-let anio = 2025 /* int numero sin coma */
-let precio = 20.50/* float numero con coma */
+/* let anio = 2025 /* int numero sin coma */
+/* let precio = 20.50 * *///* float numero con coma */
 /* ejemplo string cadena de caracteres */
-let saludo = 'hola mundo!'
+/* let saludo = 'hola mundo!'
 let curso = 'introduccion a Java Script'
 let institucion = 'coderHouse'
 
 let nombre = prompt("Ingrese nombre")
 let mensaje = prompt("Ingrese bienvenida")
-
+ */
 /* OPERADOR +
 
-SI ESTA ENTRE NUMEROS SUMA 
+SI ESTA ENTRE NUMEROS SUMA
 SI NO ESTA ENTRE NUMEROS CONCATENA
 */
 
-alert(mensaje + " " + nombre + " " + "al curso de " + curso + " " + "en" + " " + institucion)
+/* alert(mensaje + " " + nombre + " " + "al curso de " + curso + " " + "en" + " " + institucion) */
 
 /* PLANTILLAS LITERALES
 A PARTIR DE UN UNICO STRING , VAMOS INSERTANDO VARIABLES DENTRO
 BACKTICKS OBLIGATORIOS SINO NO FUNCIOMNA
 */
 // con prompt podras ingresar datos desde "consola"
-let edad = parseInt(prompt("Ingrese edad"))
+/* let edad = parseInt(prompt("Ingrese edad"))
 
 console.log(edad)
 console.log(typeof edad)
 console.log(edad + 4)
 
 
-const titulo = document.getElementById("titulo")
+const titulo = document.getElementById("titulo") */
+
+/* DECLARACION DE FUNCIONES */
+
+/*  function BuscarLibros(titulo) {
+    Cuerpo de la funcion 
+console.log(`Buscando el libro en mi biblioteca 🔎  ${titulo}...`);
+}
+llamar a la variable 
+
+BuscarLibros("EL principito"); */
+
+function calcularMulta(diasRetraso) {
+    const multaPorDia = 1.50; // 50 centavos por día de retraso
+    return diasRetraso * multaPorDia;
+}
+
+let multa = calcularMulta(7);
+console.log(`La multa total es: $${multa}`); // Muestra: La multa total es: $2.5
