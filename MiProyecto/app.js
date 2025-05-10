@@ -71,17 +71,51 @@ const titulo = document.getElementById("titulo") */
 /* DECLARACION DE FUNCIONES */
 
 /*  function BuscarLibros(titulo) {
-    Cuerpo de la funcion 
-console.log(`Buscando el libro en mi biblioteca 🔎  ${titulo}...`);
+    Cuerpo de la funcion
+console.log(`Buscando el libro en mi biblioteca ${titulo}...`);
 }
-llamar a la variable 
+llamar a la variable
 
 BuscarLibros("EL principito"); */
 
-function calcularMulta(diasRetraso) {
+/* function calcularMulta(diasRetraso) {
     const multaPorDia = 1.50; // 50 centavos por día de retraso
     return diasRetraso * multaPorDia;
 }
 
 let multa = calcularMulta(7);
-console.log(`La multa total es: $${multa}`); // Muestra: La multa total es: $2.5
+console.log(`La multa total es: $${multa}`); // Muestra: La multa total es: $2.5 */
+/*
+function saludar(nombre, apellido, edad) {
+    console.log("Hola" + " " + nombre + apellido + " " + "de" + " " + edad);
+
+}
+saludar("sofia ", "furtado", 16); */
+
+/* SCOPE */
+//variable global
+/*  let nombre_completo = "Sofia furtado";
+
+function cambiarNombre() {
+    nombre_completo = "Valentina gallo";
+    //variable local , solo se puede mostrar dentro del juego de llaves correspondientes
+    let local = "Esto es una variable local";
+    console.log(local)
+}
+
+cambiarNombre();
+console.log(nombre_completo);*/
+
+/* Funcion tradicional */
+
+/* function suma(a, b) {
+    return a / b;
+}
+
+console.log(suma(100, 5));
+
+/* funcion flecha */
+
+/* const sumarFlecha = (a, b) => a + b
+
+console.log(sumarFlecha(15, 28)); */
