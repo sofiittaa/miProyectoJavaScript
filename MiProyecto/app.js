@@ -119,3 +119,16 @@ console.log(suma(100, 5));
 /* const sumarFlecha = (a, b) => a + b
 
 console.log(sumarFlecha(15, 28)); */
+
+
+/* push(): Añade un elemento al final del array.
+
+pop(): Elimina el último elemento del array.
+
+shift(): Elimina el primer elemento del array.
+
+unshift(): Añade un elemento al inicio del array.
+
+sort(): Ordena los elementos del array.
+
+reverse(): Invierte el orden de los elementos en el array. */
