@@ -1,0 +1,15 @@
+.logo {
+    width: 270px;
+    display: block;
+    margin: 0 auto;
+
+}
+
+.pantalon1 {
+    width: 400px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 60px;
+    background-color: black;
+    padding: 0.3rem;
+}
