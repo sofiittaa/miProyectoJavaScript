@@ -7,9 +7,68 @@
 
 .pantalon1 {
     width: 400px;
-    display: block;
-    margin: 0 auto;
-    margin-top: 60px;
+    margin-top: 39px;
+    margin-left: 100px;
     background-color: black;
     padding: 0.3rem;
+    margin-bottom: 5px;
+
+
+}
+
+.pantalon2 {
+    width: 400px;
+    margin-top: 40px;
+    margin-left: 150px;
+    background-color: black;
+    padding: 0.3rem;
+    margin-bottom: 5px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(100%);
+}
+
+.carousel-control-next-icon {
+    margin-top: 100px;
+}
+
+.carousel-control-prev-icon {
+    margin-top: 100px;
+}
+
+.boton1 {
+    margin-left: 260px;
+    font-family: 'Italiana', serif;
+    font-size: 20px;
+    font-size: 25px;
+    border: solid #ffffff;
+
+}
+
+.boton2 {
+
+    margin-left: 310px;
+    font-family: 'Italiana', serif;
+    font-size: 25px;
+    border: solid #ffffff;
+}
+
+.precio1 {
+    color: #ffffff;
+    margin-left: 280px;
+    background-color: rgb(0, 0, 0);
+    width: 50px;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.precio2 {
+    color: #ffffff;
+    margin-left: 320px;
+    background-color: rgb(0, 0, 0);
+    width: 65px;
+    padding: 10px;
+    border-radius: 50%;
 }
