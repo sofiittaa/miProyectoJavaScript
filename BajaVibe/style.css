@@ -1,7 +1,10 @@
 .logo {
     height: 80px;
     object-fit: contain;
-    margin-left: -100px;
+    margin-left: -95px;
+    margin-top: -10px;
+    z-index: 7;
+
 }
 
 .top-bar {
@@ -15,8 +18,7 @@
     justify-content: space-between;
     padding: 0 40px;
     box-shadow: 0 1px 0 rgb(0, 0, 0);
-
-    z-index: 1000;
+    z-index: 5;
 }
 
 
@@ -26,25 +28,51 @@
     align-items: center;
 }
 
+
+.contador {
+    z-index: -11;
+    margin-top: 65px;
+    font-size: 22px;
+    margin-left: 780px;
+}
+
 .perfil {
+    margin-top: 10px;
     border-radius: 50%;
     width: 60px;
     height: 60px;
     object-fit: cover;
-    margin-right: 10px;
+    margin-left: -30px;
 }
 
 .registro {
+    margin-top: 10px;
     font-size: 24px;
     color: black;
+    margin-left: 20px;
     text-decoration: none;
     font-family: 'Italiana', serif;
 }
 
+.btn-sesion {
+    margin-left: 40px;
+    font-family: 'Italiana', serif;
+    font-size: 17px;
+    border: 0.5% #000000;
+    margin-top: 52px;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    margin-bottom: 40px;
+}
+
 
 .carrito {
-    font-size: 36px;
+    font-size: 25px;
     margin-left: 10px;
+    margin-top: 20px;
+    font-family: 'Italiana', serif;
 }
 
 body {
@@ -86,22 +114,19 @@ body {
     height: auto;
     max-height: 400px;
     object-fit: contain;
-    z-index: -1;
+    z-index: 1;
     margin: 0 auto;
     border: 2px solid black;
     display: flex;
     margin-top: 100px;
 }
 
-
-
-
 .container1,
 .container2,
 .container3,
 .container4 {
     display: flex;
-
+    margin-top: -80px;
 }
 
 .carousel-control-prev-icon {
@@ -125,9 +150,17 @@ body {
 
 
 .btn-comprar {
-    margin-left: 200px;
+    margin-left: 230px;
     font-family: 'Italiana', serif;
     font-size: 25px;
-    border: solid #ffffff;
-    margin-top: 20px;
+    border: 0.5% #000000;
+    margin-top: 30px;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
+    margin-bottom: 40px;
+    z-index: 10;
+    cursor: pointer;
+    position: relative;
 }
