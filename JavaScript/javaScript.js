@@ -2,73 +2,116 @@
 
 const nodoRegistro = document.getElementById('registro');
 let usuario = localStorage.getItem("nombre");
+const nodoSesion = document.getElementById('Iniciar');
+let carrito = JSON.parse(localStorage.getItem("productos")) || [];
 
-if (!usuario) {
-    Swal.fire({
-        title: "Ingresa tu nombre de usuario",
-        input: "text",
-        showCancelButton: true,
-        confirmButtonText: "Enviar",
-        showLoaderOnConfirm: true,
-        cancelButtonText: "Cancelar",
-        inputValidator: (data) => {
-            if (!data || data.trim().length === 0) {
-                return '¡El nombre no puede estar vacío!';
-            }
-        }
 
-    }).then((result) => {
-        if (result.isConfirmed) {
-            usuario = result.value.trim();
-            localStorage.setItem("nombre", usuario);
-            nodoRegistro.innerText = `${usuario}`;
+const contador = document.getElementById("contador-carrito");
 
-            Swal.fire({
-                title: `¡¡Bienvenid@, ${usuario}, a mi tienda de ropa!!`,
-                icon: "success",
-                confirmButtonColor: "#fa699d"
-            })
-        }
-    });
-} else {
+if (contador) {
+    contador.innerText = carrito.length;
+}
+
+if (usuario) {
     Swal.fire({
         title: "Bienvenidx de nuevo " + usuario,
         confirmButtonText: "¡Hola!",
-        confirmButtonColor: "#fa699d",
-        timer: 2000
+        confirmButtonColor: "#000000"
     });
-    nodoRegistro.innerText = `${usuario}`;
+    nodoRegistro.innerText = usuario;
+    nodoSesion.innerText = "Cerar Sesión";
+} else {
+    nodoRegistro.innerText = "";
+    nodoSesion.innerText = "Iniciar Sesion";
 }
 
-const CierreSession = document.getElementById('Cerrar');
+
+
+
+const IniciarSesion = document.getElementById('Iniciar');
+IniciarSesion.addEventListener('click', function () {
+    if (!usuario) {
+        Swal.fire({
+            title: "Ingresa tu nombre de usuario",
+            input: "text",
+            showCancelButton: true,
+            confirmButtonText: "Enviar",
+            cancelButtonText: "Cancelar",
+            inputValidator: (value) => {
+                if (!value || value.trim().length === 0) {
+                    return 'No podés dejar el nombre vacío ';
+                }
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                usuario = result.value.trim();
+                localStorage.setItem("nombre", usuario);
+                nodoRegistro.innerText = `${usuario}`;
+
+                Swal.fire({
+                    title: `¡¡Bienvenid@, ${usuario}, a mi tienda de ropa!!`,
+                    icon: "success",
+                    confirmButtonColor: "#fa699d"
+                });
+            }
+        });
+        nodoSesion.innerText = "Cerrar Sesión";
+    } else {
+        Swal.fire({
+            title: "¿Estás segurx de cerrar sesión?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#c0392b",
+            cancelButtonColor: "#7dcea0",
+            confirmButtonText: "Sí, cerrar sesión"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                localStorage.removeItem("nombre");
+                localStorage.removeItem("productos");
+                nodoRegistro.innerText = "Registrarse";
+                if (contador) contador.innerText = "0";
+                Swal.fire({
+                    title: "Tu sesión se ha cerrado",
+                    icon: "success",
+                    confirmButtonColor: "#fa699d"
+                });
+                nodoSesion.innerText = "Iniciar Sesión";
+            } else {
+                Swal.fire({
+                    title: "Tu sesión sigue activa",
+                    icon: "info",
+                    confirmButtonColor: "#fa699d"
+                });
+            }
+        });
+    }
+});
+
+
 CierreSession.addEventListener('click', function () {
     Swal.fire({
-        title: "Estas Segurx de cerrar session?",
-        text: "Ya no recibiras descuentos",
+        title: "¿Estás segurx de cerrar sesión?",
         icon: "warning",
         showCancelButton: true,
-        confirmButtonColor: " #c0392b",
+        confirmButtonColor: "#c0392b",
         cancelButtonColor: "#7dcea0",
-        confirmButtonText: "Si, cerrar session",
-        timer: 5500
-
+        confirmButtonText: "Sí, cerrar sesión"
     }).then((result) => {
         if (result.isConfirmed) {
+            localStorage.removeItem("nombre");
+            nodoRegistro.innerText = `Registrarse`;
+            nodoSesion.innerText = `Iniciar Sesion`
             Swal.fire({
-                title: "Tu sesion se ha cerrado",
+                title: "Tu sesión se ha cerrado",
                 icon: "success",
-                confirmButtonColor: "#fa699d "
+                confirmButtonColor: "#fa699d"
             });
-            nodoRegistro.innerText = `Registro`;
-            localStorage.removeItem("nombre", usuario);
-
         } else {
             Swal.fire({
-                title: "Tu sesion no se ha cerrado",
-                icon: "success",
-                confirmButtonColor: "#fa699d ",
-                timer: 1500
-            })
+                title: "Tu sesión sigue activa",
+                icon: "info",
+                confirmButtonColor: "#fa699d"
+            });
         }
     });
 });
@@ -89,9 +132,6 @@ const productos = [
     { nombre: "Jean Baggy Azul Lavado Tiro Medio", precio: 799 },
     { nombre: "Jean Recto Celeste Lavado Tiro Alto", precio: 2199 }
 ];
-
-let carrito = [];
-const contador = document.getElementById("contador-carrito");
 const botones = document.getElementsByClassName('btn-comprar');
 for (let i = 0; i < botones.length; i++) {
     botones[i].addEventListener("click", function () {
@@ -105,28 +145,29 @@ for (let i = 0; i < botones.length; i++) {
 
         }).then((result) => {
             if (result.isConfirmed) {
+                carrito.push(productos[i]);
+                localStorage.setItem("productos", JSON.stringify(carrito));
+                contador.innerText = carrito.length;
                 Swal.fire({
                     title: `${productos[i].nombre} añadido al carrito`,
                     icon: "success",
                     confirmButtonText: "Ok",
                     confirmButtonColor: "#fa699d ",
                 });
-                carrito.push(productos[i]);
-                localStorage.getItem("productos")
-                contador.innerText = carrito.length;
-
-            } {
+            } else {
                 Swal.fire({
-                    title: `Cancelaste la compra de ${pantalon[i].nombre}`,
+                    title: `Cancelaste la compra de ${productos[i].nombre}`,
                     icon: "error",
                     confirmButtonText: "Ok",
                     confirmButtonColor: "#fa699d ",
 
-                })
+                });
             }
-        })
+        });
     });
-};
+}
+
+
 
 
 

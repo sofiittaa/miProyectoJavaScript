@@ -1,10 +1,14 @@
+body {
+    padding-top: 30px;
+    background-color: white;
+}
+
 .logo {
     height: 80px;
     object-fit: contain;
     margin-left: -95px;
     margin-top: -10px;
     z-index: 7;
-
 }
 
 .top-bar {
@@ -21,7 +25,6 @@
     z-index: 5;
 }
 
-
 .contador {
     z-index: -11;
     margin-top: 65px;
@@ -29,18 +32,24 @@
     margin-left: 780px;
 }
 
+.flecha {
+    margin-left: -30px;
+    font-size: 40px;
+    border: none;
+
+}
+
 .perfil {
     border-radius: 100%;
     width: 60px;
     height: 60px;
-    margin-left: -30px;
+    margin-top: -10px;
 }
 
 .registro {
     margin-top: 10px;
     font-size: 24px;
     color: black;
-    margin-left: 20px;
     text-decoration: none;
     font-family: 'Italiana', serif;
 }
@@ -66,37 +75,34 @@
     font-family: 'Italiana', serif;
 }
 
-body {
-    padding-top: 110px;
-    background-color: white;
-}
-
-
 .pantalon-img {
-    width: 100%;
-    max-width: 250px;
+    width: 500px;
+    max-width: 540px;
     height: auto;
-    max-height: 400px;
+    max-height: 790px;
     object-fit: contain;
-    z-index: -1;
+    z-index: 10;
     margin: 0 auto;
     border: 2px solid black;
     display: flex;
-    margin-top: 150px;
+    margin-left: 200px;
+    margin-top: 110px;
+    margin-bottom: 30px;
 }
 
 .pantalon2-img {
-
-    width: 100%;
-    max-width: 250px;
+    width: 500px;
+    max-width: 540px;
     height: auto;
-    max-height: 400px;
+    max-height: 790px;
     object-fit: contain;
-
+    z-index: 10;
     margin: 0 auto;
     border: 2px solid black;
     display: flex;
-    margin-top: 150px;
+    margin-left: 200px;
+    margin-top: 110px;
+    margin-bottom: 30px;
 }
 
 
@@ -112,23 +118,13 @@ body {
     display: flex;
     margin-left: 200px;
     margin-top: 110px;
+    margin-bottom: 30px;
 }
 
-.container1,
-.container2,
-.container3,
-.container4 {
-    display: flex;
-    margin-top: -80px;
-    overflow: visible;
-}
 
-.carousel-control-prev-icon {
-    margin-left: 200px;
-}
 
 .carousel-control-next-icon {
-    margin-left: -1400px;
+    margin-left: -1600px;
 }
 
 .carousel-control-prev-icon,
@@ -138,7 +134,8 @@ body {
 }
 
 .btn-comprar {
-    margin-left: 170px;
+    margin-left: 900px;
+    margin-top: 1000px;
     font-family: 'Italiana', serif;
     font-size: 25px;
     border: 0.5% #000000;
@@ -149,8 +146,8 @@ body {
     border-bottom-left-radius: 7px;
     margin-bottom: 40px;
     z-index: -3;
-    cursor: pointer;
-    position: relative;
+
+
 }
 
 .precio {

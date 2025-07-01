@@ -21,8 +21,8 @@
         <div class="top-bar">
 
             <div class="left-section">
-
-                <img class="perfil" src="../BajaVibe/img/perfil.jpg" alt="Perfil">
+                <a href="../index.html"><button class="flecha">←</button></a>
+                <img class="perfil" src="../BajaVibe/img/perfil.png" alt="Perfil">
                 <a id="registro" class="registro" href="#">Registro</a>
                 <button class="btn-sesion" id="Cerrar" onclick="borrar()">Cerrar
                     Sesion</button>
@@ -35,32 +35,29 @@
 
         </div>
         <!-- Carrousel 1 -->
-        <div class="container1">
-            <div class="col-md-12">
-                <div id="carouselOne" class="carousel slide">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="../BajaVibe/img/pantalon1.png" class="pantalon1-img" alt="Pantalón 1" />
-                        </div>
-                        <div class="carousel-item">
-                            <img src="../BajaVibe/img/pantalon1,2.png" class="pantalon1-img" alt="pantalon 2">
+        <div class="col-md-12">
+            <div id="carouselOne" class="carousel slide">
+                <div class="carousel-inner">
 
-                        </div>
+                    <div class="carousel-item active">
+                        <img src="../BajaVibe/img/pantalon1.png" class="pantalon1-img" alt="Pantalón 1" />
                     </div>
-                    <button id="btn-comprar" class="btn-comprar " onclick="comprar()">Comprar</button>
-                    <p class="precio">$1499</p>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselOne"
-                        data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon"></span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselOne"
-                        data-bs-slide="next">
-                        <span class="carousel-control-next-icon"></span>
-                    </button>
+                    <div class="carousel-item">
+                        <img src="../BajaVibe/img/pantalon1,2.png" class="pantalon1-img" alt="pantalon 2">
+
+                    </div>
 
                 </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselOne" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselOne" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+                <button class="btn-comprar" onclick="comprar()">Comprar</button>
+                <p class="precio">$1499</p>
             </div>
-
+        </div>
 
     </header>
     <div class="fter">
