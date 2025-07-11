@@ -1,10 +1,57 @@
-.logo {
-    height: 80px;
-    object-fit: contain;
-    margin-left: 50px;
-    margin-top: -10px;
-    z-index: 7;
+.titulo {
+    margin-top: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #FF6B4A;
+    margin-bottom: 0.5em;
+    letter-spacing: 2px;
+    text-align: center;
+}
 
+.text {
+    font-size: 18px;
+    margin-top: -10px;
+    color: #ec792c;
+    z-index: -2;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
+}
+
+.text:hover {
+    color: #A4D0FF;
+}
+
+.titulo:hover {
+    color: #A4D0FF;
+}
+
+body {
+    padding-top: 110px;
+    z-index: 1;
+    display: grid;
+    height: 100%;
+    background: linear-gradient(105deg, #f8cfb5 0%, #CFE3FF 90%);
+    color: #3A2E2E;
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(221, 106, 34, 0.475) 10%, transparent 25%),
+        radial-gradient(circle at 80% 80%, rgba(77, 140, 212, 0.683) 8%, transparent 20%);
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.9;
 }
 
 .top-bar {
@@ -12,21 +59,14 @@
     top: 0;
     width: 100%;
     height: 100px;
-    background-color: white;
+    background-color: #DDEBFF;
+    /* verde olivo clarito */
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 40px;
-    box-shadow: 0 1px 0 rgb(0, 0, 0);
+    box-shadow: 0 3px 0#6D85A8;
     z-index: 5;
-}
-
-
-.contador {
-    z-index: -11;
-    margin-top: 65px;
-    font-size: 22px;
-    margin-left: 780px;
 }
 
 .perfil {
@@ -37,38 +77,62 @@
 }
 
 .registro {
-    margin-top: 20%;
+    margin-top: 100%;
     font-size: 30px;
-    color: rgb(0, 0, 0);
+    color: #f4741f;
     margin-left: 20px;
     text-decoration: none;
-    font-family: 'Italiana', serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
+}
+
+.registro:hover {
+    color: #A4D0FF;
+}
+
+.left-section {
+    margin-top: 10px;
 }
 
 .btn-sesion {
     margin-left: 40px;
-    font-family: 'Italiana', serif;
-    font-size: 17px;
-    border: 0.5% #000000;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
+    font-size: 20px;
+    border: none;
+    background-color: #FF6B4A;
     margin-top: 52px;
-    border-top-right-radius: 7px;
-    border-top-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-    border-bottom-left-radius: 7px;
+    border: 50%;
     margin-bottom: 40px;
+    color: #262020;
+    padding: 0.3em 1em;
+    border-radius: 100px;
+    margin-top: 2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
+.btn-sesion:hover {
+    background-color: #A4D0FF;
+    color: #000000;
+}
 
 .carrito {
     font-size: 25px;
     margin-left: 10px;
     margin-top: 20px;
-    font-family: 'Italiana', serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
+    display: flex;
+    color: #FF6B4A;
 }
 
-body {
-    padding-top: 110px;
-    background-color: white;
+.carrito:hover {
+    color: #82a9e2;
+}
+
+.pro {
+    margin-left: 10px;
 }
 
 .pantalon-img {
@@ -79,9 +143,13 @@ body {
     object-fit: contain;
     z-index: -1;
     margin: 0 auto;
-    border: 2px solid black;
+    border: 6px solid #ff7f62;
     display: flex;
     margin-top: 150px;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
 }
 
 .pantalon2-img {
@@ -93,9 +161,13 @@ body {
     object-fit: contain;
     z-index: -1;
     margin: 0 auto;
-    border: 2px solid black;
+    border: 6px solid #ff7f62;
     display: flex;
     margin-top: 150px;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
 }
 
 
@@ -107,9 +179,13 @@ body {
     object-fit: contain;
     z-index: 1;
     margin: 0 auto;
-    border: 2px solid black;
+    border: 6px solid #ff7f62;
     display: flex;
     margin-top: 150px;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
 }
 
 .container1,
@@ -118,6 +194,9 @@ body {
 .container4 {
     display: flex;
     margin-top: -80px;
+
+    content: center;
+
 }
 
 .carousel-control-prev-icon {
@@ -137,10 +216,12 @@ body {
 
 .p1 {
     margin-left: 260px;
-    font-family: 'Italiana', serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
     font-size: 20px;
     font-size: 25px;
     border: solid #ffffff;
+    color: #3A2E2E;
 
 }
 
@@ -149,7 +230,8 @@ body {
     margin-left: 170px;
     font-family: 'Italiana', serif;
     font-size: 25px;
-    border: 0.5% #000000;
+    border: none;
+    background-color: #FF6B4A;
     margin-top: 30px;
     border-top-right-radius: 7px;
     border-top-left-radius: 7px;
@@ -159,6 +241,11 @@ body {
     z-index: 10;
     cursor: pointer;
     position: relative;
+    color: #3A2E2E;
+}
+
+.btn-comprar:hover {
+    background-color: #A4D0FF;
 }
 
 .precio {
@@ -167,11 +254,26 @@ body {
     margin-left: 310px;
     margin-top: -78px;
     z-index: 18;
+    color: #3A2E2E;
 }
 
 .foo {
-    margin-top: 600px;
+    margin-top: 100px;
     text-align: center;
-    margin-left: -1660px;
+    color: #eb6f1d;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
+}
 
+.foo:hover {
+    color: #619ddd;
+}
+
+.titulo-personalizado {
+    font-family: 'Poppins', sans-serif;
+    ;
+}
+
+.texto-personalizado {
+    font-family: 'Poppins', sans-serif;
 }

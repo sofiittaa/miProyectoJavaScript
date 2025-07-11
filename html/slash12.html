@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baja Vibe</title>
-    <link rel="stylesheet" href="./css/style2.css">
+    <link rel="stylesheet" href="../css/style2.css">
     <!-- SweetAlert2 primero -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
 
     <!-- Tu script con lógica -->
-    <script src="../JavaScript/javaScript.js" defer></script>
+    <script type="module" src="../JavaScript/javaScript.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,49 +29,75 @@
                     Sesion</button>
             </div>
 
-            <img class="logo" src="../BajaVibe/img/logoType.png" alt="" />
+            <div>
+                <h1 class="titulo"> BAJA VIBE</h1>
+                <p class="text">Minimal vibes, maximal presence</p>
+            </div>
             <div class="carrito">
                 🛒 <span id="contador-carrito">0</span> productos
             </div>
 
         </div>
-        <!-- Carrusel 12 -->
-        <div class="col-md-12">
-            <div id="carouselTwelve" class="carousel slide">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="https://hmuruguay.vtexassets.com/unsafe/768x0/center/middle/https%3A%2F%2Fhmuruguay.vtexassets.com%2Farquivos%2Fids%2F4067933%2FWide-High-Jeans---Azul-denim-claro---H-M-UY.jpg%3Fv%3D638845290203800000"
-                            class="pantalon-img" alt="Imagen23">
-                    </div>
-                    <div class="carousel-item">
+        <div class="detalle-producto">
+            <!-- Carrusel 12 -->
+            <div class="col-md-12">
+                <div id="carouselTwelve" class="carousel slide">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="https://hmuruguay.vtexassets.com/unsafe/768x0/center/middle/https%3A%2F%2Fhmuruguay.vtexassets.com%2Farquivos%2Fids%2F4067933%2FWide-High-Jeans---Azul-denim-claro---H-M-UY.jpg%3Fv%3D638845290203800000"
+                                class="pantalon-img" alt="Imagen23">
+                        </div>
+                        <div class="carousel-item">
 
-                        <img src="https://hmuruguay.vtexassets.com/unsafe/320x0/center/middle/https%3A%2F%2Fhmuruguay.vtexassets.com%2Farquivos%2Fids%2F4067936%2FWide-High-Jeans---Azul-denim-claro---H-M-UY.jpg%3Fv%3D638845290218170000"
-                            class="pantalon-img" alt="Imagen24">
+                            <img src="https://hmuruguay.vtexassets.com/unsafe/320x0/center/middle/https%3A%2F%2Fhmuruguay.vtexassets.com%2Farquivos%2Fids%2F4067936%2FWide-High-Jeans---Azul-denim-claro---H-M-UY.jpg%3Fv%3D638845290218170000"
+                                class="pantalon-img" alt="Imagen24">
 
+                        </div>
                     </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselTwelve"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselTwelve"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselTwelve"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselTwelve"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
-                <button id="btn-comprar" class="btn-comprar" onclick=" comprar()">Comprar</button>
+            </div>
+
+            <!-- Info del producto -->
+            <div class="info-producto">
                 <p class="precio">$2199</p>
+                <p class="desc">
+                    Jean recto con tiro medio y largo completo. Confeccionado en denim de algodón lavado con efecto
+                    gastado sutil en zonas
+                    estratégicas. Color celeste desgastado tipo vintage. Pretina tradicional con cierre de botón y
+                    cremallera. Calce
+                    relajado.
+
+                </p>
+                <div class="talles">
+                    <button class="talle-btn">XS</button>
+                    <button class="talle-btn">S</button>
+                    <button class="talle-btn">M</button>
+                    <button class="talle-btn">L</button>
+                    <button class="talle-btn">XL</button>
+                </div>
+                <button class="btn-comprar" onclick="comprar()">Comprar</button>
             </div>
         </div>
+    </header>
+    <div class="fter">
 
-        <div class="fter">
+        <footer>
+            <p class="foo">© 2025 Baja Vibe. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+    <script src=" https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
 
-            <footer>
-                <p class="foo">© 2025 Baja Vibe. Todos los derechos reservados.</p>
-            </footer>
-        </div>
-        <script src=" https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-            crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-            integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-            crossorigin="anonymous"></script>
+</body>

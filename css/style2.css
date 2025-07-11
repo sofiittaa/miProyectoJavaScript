@@ -1,14 +1,41 @@
-body {
-    padding-top: 30px;
-    background-color: white;
+.titulo {
+    margin-top: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #FF6B4A;
+    margin-bottom: 0.5em;
+    letter-spacing: 2px;
+    text-align: center;
 }
 
-.logo {
-    height: 80px;
-    object-fit: contain;
-    margin-left: -95px;
+
+.text {
+    font-size: 18px;
     margin-top: -10px;
-    z-index: 7;
+    color: #ec792c;
+    z-index: -2;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
+}
+
+.text:hover {
+    color: #A4D0FF;
+}
+
+.titulo:hover {
+    color: #A4D0FF;
+}
+
+body {
+    padding-top: 110px;
+    z-index: 1;
+    background: url(/BajaVibe/img/fondoHTML.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 .top-bar {
@@ -16,27 +43,89 @@ body {
     top: 0;
     width: 100%;
     height: 100px;
-    background-color: white;
+    background-color: #DDEBFF;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 40px;
-    box-shadow: 0 1px 0 rgb(0, 0, 0);
+    box-shadow: 0 3px 0#6D85A8;
     z-index: 5;
 }
+
 
 .contador {
     z-index: -11;
     margin-top: 65px;
     font-size: 22px;
     margin-left: 780px;
+    color: #3A2E2E;
 }
+
+.perfil {
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    margin-left: -30px;
+}
+
+.registro {
+    margin-top: 100%;
+    font-size: 30px;
+    color: #f4741f;
+    margin-left: 20px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
+}
+
+.left-section {
+    margin-top: 10px;
+}
+
+.btn-sesion {
+    margin-left: 40px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
+    font-size: 20px;
+    border: none;
+    background-color: #FF6B4A;
+    margin-top: 52px;
+    border: 50%;
+    margin-bottom: 40px;
+    color: #262020;
+    padding: 0.3em 1em;
+    border-radius: 100px;
+    margin-top: 2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-sesion:hover {
+    background-color: #A4D0FF;
+    color: #000000;
+}
+
+.carrito {
+    font-size: 25px;
+    margin-left: 10px;
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
+    display: flex;
+    color: #FF6B4A;
+}
+
+.pro {
+    margin-left: 10px;
+}
+
 
 .flecha {
     margin-left: -30px;
     font-size: 40px;
     border: none;
-
+    color: #ec792c;
+    background-color: #daeafb;
 }
 
 .perfil {
@@ -44,87 +133,127 @@ body {
     width: 60px;
     height: 60px;
     margin-top: -10px;
+    margin-left: 20px;
+
 }
 
 .registro {
-    margin-top: 10px;
-    font-size: 24px;
-    color: black;
+    margin-top: 100%;
+    font-size: 30px;
+    color: #f4741f;
+    margin-left: 20px;
     text-decoration: none;
-    font-family: 'Italiana', serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
+}
+
+.registro:hover {
+    color: #A4D0FF;
 }
 
 .btn-sesion {
     margin-left: 40px;
-    font-family: 'Italiana', serif;
-    font-size: 17px;
-    border: 0.5% #000000;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
+    font-size: 20px;
+    border: none;
+    background-color: #FF6B4A;
     margin-top: 52px;
-    border-top-right-radius: 7px;
-    border-top-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-    border-bottom-left-radius: 7px;
+    border: 50%;
     margin-bottom: 40px;
+    color: #262020;
+    padding: 0.3em 1em;
+    border-radius: 100px;
+    margin-top: 2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
+.btn-sesion:hover {
+    background-color: #A4D0FF;
+    color: #000000;
+}
 
 .carrito {
     font-size: 25px;
     margin-left: 10px;
     margin-top: 20px;
-    font-family: 'Italiana', serif;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
+    display: flex;
+    color: #FF6B4A;
+}
+
+.carrito:hover {
+    color: #82a9e2;
+}
+
+.pro {
+    margin-left: 10px;
 }
 
 .pantalon-img {
-    width: 500px;
+    width: 450px;
     max-width: 540px;
     height: auto;
     max-height: 790px;
     object-fit: contain;
     z-index: 10;
-    margin: 0 auto;
-    border: 2px solid black;
+    margin: 20px;
+    border: 5px solid #ec792c;
     display: flex;
-    margin-left: 200px;
-    margin-top: 110px;
+    margin-left: 150px;
     margin-bottom: 30px;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
 }
 
 .pantalon2-img {
-    width: 500px;
+    width: 450px;
     max-width: 540px;
     height: auto;
     max-height: 790px;
     object-fit: contain;
     z-index: 10;
     margin: 0 auto;
-    border: 2px solid black;
+    border: 5px solid black;
     display: flex;
     margin-left: 200px;
     margin-top: 110px;
     margin-bottom: 30px;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
 }
-
 
 .pantalon1-img {
-    width: 500px;
+    width: 450px;
     max-width: 540px;
     height: auto;
     max-height: 790px;
     object-fit: contain;
     z-index: 10;
     margin: 0 auto;
-    border: 2px solid black;
+    border: 5px solid #ec792c;
     display: flex;
-    margin-left: 200px;
-    margin-top: 110px;
+    margin-left: 150px;
+    margin-top: 30px;
     margin-bottom: 30px;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-bottom-left-radius: 7px;
 }
 
-
-
 .carousel-control-next-icon {
-    margin-left: -1600px;
+    margin-left: -1400px;
+}
+
+.carousel-control-prev-icon {
+    margin-left: -150px;
 }
 
 .carousel-control-prev-icon,
@@ -133,36 +262,120 @@ body {
 
 }
 
-.btn-comprar {
-    margin-left: 900px;
-    margin-top: 1000px;
-    font-family: 'Italiana', serif;
-    font-size: 25px;
-    border: 0.5% #000000;
-    margin-top: 30px;
-    border-top-right-radius: 7px;
-    border-top-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-    border-bottom-left-radius: 7px;
-    margin-bottom: 40px;
-    z-index: -3;
+.info-producto {
+    margin-left: 500px;
+    margin-top: -650px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 50px;
+    background: linear-gradient(10deg, #fb9b5b 0%, #9dc2f7 100%);
+}
 
-
+.detalle-producto {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+    padding: -15px;
+    flex-wrap: wrap;
 }
 
 .precio {
-    font-size: 25px;
-    font-family: 'Italiana', serif;
-    margin-left: 310px;
-    margin-top: -78px;
-    z-index: -5;
-}
-
-.fter {
-    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #FF6B4A;
+    cursor: pointer;
+    width: 110px;
+    height: 55px;
+    border-radius: 30px;
+    font-size: 35px;
+    margin-left: 190px;
+    z-index: 1;
     text-align: center;
 }
 
-.carouselOne {
+.precio:hover {
+    background-color: #69aff9;
+    z-index: 1;
+}
+
+.talles {
     display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.talle-btn {
+    margin-left: 35px;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #FF6B4A;
+    background-color: #FF6B4A;
+    color: #ffe5e5;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
+    z-index: 1;
+}
+
+.talle-btn:hover {
+    background-color: #A4D0FF;
+    z-index: 1;
+}
+
+.talle-btn.selected {
+    background-color: #dbecff;
+    z-index: 1;
+}
+
+.desc {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
+    width: 500px;
+    text-align: center;
+    color: #f26717;
+    z-index: 1;
+}
+
+.desc:hover {
+    color: #cce5ff;
+}
+
+.btn-comprar {
+    margin-left: 170px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
+    font-size: 25px;
+    border: none;
+    background-color: #FF6B4A;
+    cursor: pointer;
+    color: #fff1f1;
+    border-radius: 99px;
+    width: 150px;
+    height: 60px;
+    margin-bottom: 40px;
+    z-index: 1;
+}
+
+.btn-comprar:hover {
+    background-color: #69aff9;
+    z-index: 1;
+}
+
+.fter {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
+    margin-top: 20px;
+    text-align: center;
+    color: #ff6a07;
+}
+
+.fter:hover {
+    color: #69aff9;
+    z-index: 1;
 }

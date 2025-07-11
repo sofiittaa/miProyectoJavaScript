@@ -10,7 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
 
     <!-- Tu script con lógica -->
-    <script src="../JavaScript/javaScript.js" defer></script>
+    <script type="module" src="../JavaScript/javaScript.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +20,6 @@
     <header>
 
         <div class="top-bar">
-
             <div class="left-section">
                 <a href="../index.html"><button class="flecha">←</button></a>
                 <img class="perfil" src="../BajaVibe/img/perfil.png" alt="Perfil">
@@ -29,16 +28,20 @@
                     Sesion</button>
             </div>
 
-            <img class="logo" src="../BajaVibe/img/logoType.png" alt="" />
+            <div>
+                <h1 class="titulo"> BAJA VIBE</h1>
+                <p class="text">Minimal vibes, maximal presence</p>
+            </div>
             <div class="carrito">
                 🛒 <span id="contador-carrito">0</span> productos
             </div>
 
         </div>
-        <!-- Carrusel 7 -->
-        <div class="container3">
+        <div class="detalle-producto">
+            <!-- Carrusel 7 -->
+
             <div class="col-md-12">
-                <div id="carouselSeven" class="carousel slide">
+                <div id="carouselSeven" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
 
                         <div class="carousel-item active">
@@ -61,23 +64,42 @@
                         data-bs-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </button>
-                    <button id="btn-comprar" class="btn-comprar " onclick="comprar()">Comprar</button>
-                    <p class="precio">$1499</p>
                 </div>
             </div>
 
-            <div class="fter">
-                <footer>
-                    <p class="foo">© 2025 Baja Vibe. Todos los derechos reservados.</p>
-                </footer>
+            <!-- Info del producto -->
+            <div class="info-producto">
+                <p class="precio">$2000</p>
+                <p class="desc">
+                    Pantalón de corte recto en denim azul oscuro. Tiro alto y estructura firme, confeccionado en
+                    algodón 100%. Diseño limpio
+                    sin procesos de desgaste. Largo completo. Cierre con botón metálico y cremallera.
+                </p>
+                <div class="talles">
+                    <button class="talle-btn">XS</button>
+                    <button class="talle-btn">S</button>
+                    <button class="talle-btn">M</button>
+                    <button class="talle-btn">L</button>
+                    <button class="talle-btn">XL</button>
+                </div>
+
+                <button class="btn-comprar" onclick="comprar()">Comprar</button>
             </div>
-            <script src=" https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-                integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-                crossorigin="anonymous"></script>
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-                integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-                crossorigin="anonymous"></script>
+        </div>
     </header>
+    <div class="fter">
+        <footer>
+            <p class="foo">© 2025 Baja Vibe. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+
 </body>
 
 </html>

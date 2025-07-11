@@ -1,10 +1,7 @@
-
-
 const nodoRegistro = document.getElementById('registro');
 let usuario = localStorage.getItem("nombre");
 const nodoSesion = document.getElementById('Iniciar');
 let carrito = JSON.parse(localStorage.getItem("productos")) || [];
-
 
 const contador = document.getElementById("contador-carrito");
 
@@ -12,28 +9,51 @@ if (contador) {
     contador.innerText = carrito.length;
 }
 
-if (usuario) {
-    Swal.fire({
-        title: "Bienvenidx de nuevo " + usuario,
-        confirmButtonText: "¡Hola!",
-        confirmButtonColor: "#000000"
-    });
-    nodoRegistro.innerText = usuario;
-    nodoSesion.innerText = "Cerar Sesión";
-} else {
-    nodoRegistro.innerText = "";
-    nodoSesion.innerText = "Iniciar Sesion";
+actualizar();
+
+function actualizar() {
+    const nodoSesion = document.getElementById('Iniciar') || document.getElementById('Cerrar');
+    const nodoRegistro = document.getElementById('registro');
+    const contador = document.getElementById("contador-carrito");
+
+    if (usuario) {
+        Swal.fire({
+            title: `Bienvenidx de nuevo ${usuario}`,
+            confirmButtonText: "¡Hola!",
+            confirmButtonColor: "rgb(255, 125, 44)",
+            width: 600,
+            padding: "5em",
+            background: "#fff url(BajaVibe/img/fondoSweet.png)",
+            customClass: {
+                title: 'titulo-personalizado',
+                content: 'texto-personalizado'
+            },
+        });
+
+        if (nodoRegistro) nodoRegistro.innerText = usuario;
+        if (nodoSesion) nodoSesion.innerText = "Cerrar Sesión";
+
+    } else {
+        if (nodoRegistro) nodoRegistro.innerText = "Registrarse";
+        if (nodoSesion) nodoSesion.innerText = "Iniciar Sesión";
+        if (contador) contador.innerText = "0";
+    }
 }
 
-
-
-
-const IniciarSesion = document.getElementById('Iniciar');
-IniciarSesion.addEventListener('click', function () {
+nodoSesion.addEventListener('click', function () {
     if (!usuario) {
         Swal.fire({
             title: "Ingresa tu nombre de usuario",
             input: "text",
+            customClass: {
+                title: 'titulo-personalizado',
+                content: 'texto-personalizado'
+            },
+            confirmButtonColor: " #619ddd",
+            cancelButtonColor: "rgb(236, 143, 57)",
+            width: 600,
+            padding: "5em",
+            background: "#fff url(BajaVibe/img/fondoSweet.png)",
             showCancelButton: true,
             confirmButtonText: "Enviar",
             cancelButtonText: "Cancelar",
@@ -47,129 +67,102 @@ IniciarSesion.addEventListener('click', function () {
                 usuario = result.value.trim();
                 localStorage.setItem("nombre", usuario);
                 nodoRegistro.innerText = `${usuario}`;
-
+                nodoSesion.innerText = "Cerrar Sesión";
                 Swal.fire({
                     title: `¡¡Bienvenid@, ${usuario}, a mi tienda de ropa!!`,
                     icon: "success",
-                    confirmButtonColor: "#fa699d"
+                    confirmButtonColor: " #619ddd",
+                    customClass: {
+                        title: 'titulo-personalizado',
+                        content: 'texto-personalizado'
+                    },
+
+                    width: 600,
+                    padding: "5em",
+                    background: "#fff url(BajaVibe/img/fondoSweet.png)",
                 });
             }
         });
-        nodoSesion.innerText = "Cerrar Sesión";
+
     } else {
         Swal.fire({
             title: "¿Estás segurx de cerrar sesión?",
             icon: "warning",
             showCancelButton: true,
-            confirmButtonColor: "#c0392b",
-            cancelButtonColor: "#7dcea0",
-            confirmButtonText: "Sí, cerrar sesión"
+            confirmButtonColor: " #c0392b",
+            cancelButtonColor: "rgb(236, 143, 57)",
+            confirmButtonText: "Sí, cerrar sesión",
+            customClass: {
+                title: 'titulo-personalizado',
+                content: 'texto-personalizado'
+            },
+            confirmButtonColor: " #619ddd",
+            width: 600,
+            padding: "5em",
+            background: "#fff url(BajaVibe/img/fondoSweet.png)",
         }).then((result) => {
             if (result.isConfirmed) {
                 localStorage.removeItem("nombre");
+                usuario = null;
                 localStorage.removeItem("productos");
                 nodoRegistro.innerText = "Registrarse";
+
+                nodoSesion.innerText = "Iniciar Sesión"
+
+
                 if (contador) contador.innerText = "0";
                 Swal.fire({
                     title: "Tu sesión se ha cerrado",
                     icon: "success",
-                    confirmButtonColor: "#fa699d"
+                    confirmButtonColor: " #c0392b",
+                    customClass: {
+                        title: 'titulo-personalizado',
+                        content: 'texto-personalizado',
+                        width: 600,
+                        padding: "5em",
+                        background: "#fff url(BajaVibe/img/fondoSweet.png)",
+                    },
                 });
-                nodoSesion.innerText = "Iniciar Sesión";
+                nodoRegistro = "Registrarse"
+
             } else {
                 Swal.fire({
                     title: "Tu sesión sigue activa",
                     icon: "info",
-                    confirmButtonColor: "#fa699d"
+                    confirmButtonColor: "rgb(252, 117, 55)",
+                    customClass: {
+                        title: 'titulo-personalizado',
+                        content: 'texto-personalizado',
+                    },
+                    width: 600,
+                    padding: "5em",
+                    background: "#fff url(BajaVibe/img/fondoSweet.png)",
                 });
             }
+            actualizar();
         });
     }
+
 });
 
 
-CierreSession.addEventListener('click', function () {
-    Swal.fire({
-        title: "¿Estás segurx de cerrar sesión?",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#c0392b",
-        cancelButtonColor: "#7dcea0",
-        confirmButtonText: "Sí, cerrar sesión"
-    }).then((result) => {
-        if (result.isConfirmed) {
-            localStorage.removeItem("nombre");
-            nodoRegistro.innerText = `Registrarse`;
-            nodoSesion.innerText = `Iniciar Sesion`
-            Swal.fire({
-                title: "Tu sesión se ha cerrado",
-                icon: "success",
-                confirmButtonColor: "#fa699d"
-            });
-        } else {
-            Swal.fire({
-                title: "Tu sesión sigue activa",
-                icon: "info",
-                confirmButtonColor: "#fa699d"
-            });
-        }
-    });
-});
+/* import { act } from 'react'; */
+/* import { productos } from './js.js'; */
 
+document.addEventListener("DOMContentLoaded", () => {
+    const botones = document.getElementsByClassName('btn-comprar');
+    console.log("botones.length:", botones.length);
 
-
-const productos = [
-    { nombre: "Jean Acampanado Azul Tiro Bajo", precio: 1499 },
-    { nombre: "Jean Recto Azul Lavado Tiro Bajo", precio: 1000 },
-    { nombre: "Jean recto Negro Tiro Medio", precio: 1200 },
-    { nombre: "Jean baggy ancho Celeste Lavado tiro alto", precio: 1299 },
-    { nombre: "Jean campana Celeste Lavado Tiro bajo", precio: 999 },
-    { nombre: "Jean recto Azul Tiro alto", precio: 1899 },
-    { nombre: "Jean Baggy Beige Tiro Alto", precio: 2000 },
-    { nombre: "Jean Recto Negro Tiro Alto", precio: 1500 },
-    { nombre: "Jean Recto Azul Lavado Tiro Alto", precio: 1200 },
-    { nombre: "jean Recto Celeste Lavado Tiro Alto", precio: 1000 },
-    { nombre: "Jean Baggy Azul Lavado Tiro Medio", precio: 799 },
-    { nombre: "Jean Recto Celeste Lavado Tiro Alto", precio: 2199 }
-];
-const botones = document.getElementsByClassName('btn-comprar');
-for (let i = 0; i < botones.length; i++) {
-    botones[i].addEventListener("click", function () {
-        let confirmas = Swal.fire({
-            title: `¿Añadir ${productos[i].nombre} talle tal al carrito?`,
-            showCancelButton: true,
-            cancelButtonText: "Cancelar",
-            confirmButtonText: "Añadir",
-            confirmButtonColor: "#7dcea0",
-            cancelButtonColor: " #c0392b",
-
-        }).then((result) => {
-            if (result.isConfirmed) {
-                carrito.push(productos[i]);
-                localStorage.setItem("productos", JSON.stringify(carrito));
-                contador.innerText = carrito.length;
-                Swal.fire({
-                    title: `${productos[i].nombre} añadido al carrito`,
-                    icon: "success",
-                    confirmButtonText: "Ok",
-                    confirmButtonColor: "#fa699d ",
-                });
-            } else {
-                Swal.fire({
-                    title: `Cancelaste la compra de ${productos[i].nombre}`,
-                    icon: "error",
-                    confirmButtonText: "Ok",
-                    confirmButtonColor: "#fa699d ",
-
-                });
-            }
+    botones[0]?.addEventListener("click", () => {
+        console.log("CLICK EN EL BOTÓN 🛍️");
+        Swal.fire({
+            title: "¿Añadir este jean al carrito?",
+            icon: "question",
+            confirmButtonText: "Sí, obvio",
+            cancelButtonText: "No, me arrepentí",
         });
     });
-}
-
-
-
-
+});
 
 
 
