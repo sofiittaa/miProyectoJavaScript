@@ -1,9 +1,4 @@
-const nodoRegistro = document.getElementById('registro');
-let usuario = localStorage.getItem("nombre");
-const nodoSesion = document.getElementById('Iniciar');
-let carrito = JSON.parse(localStorage.getItem("productos")) || [];
-
-const contador = document.getElementById("contador-carrito");
+import { usuario, contador, nodoRegistro, nodoSesion, carrito, productos } from '/JavaScript/globales.js';
 
 if (contador) {
     contador.innerText = carrito.length;
@@ -12,10 +7,6 @@ if (contador) {
 actualizar();
 
 function actualizar() {
-    const nodoSesion = document.getElementById('Iniciar') || document.getElementById('Cerrar');
-    const nodoRegistro = document.getElementById('registro');
-    const contador = document.getElementById("contador-carrito");
-
     if (usuario) {
         Swal.fire({
             title: `Bienvenidx de nuevo ${usuario}`,
@@ -58,8 +49,8 @@ nodoSesion.addEventListener('click', function () {
             confirmButtonText: "Enviar",
             cancelButtonText: "Cancelar",
             inputValidator: (value) => {
-                if (!value || value.trim().length === 0) {
-                    return 'No podés dejar el nombre vacío ';
+                if (value == null || value.trim() === "") {
+                    return "No podés dejar el nombre vacío";
                 }
             }
         }).then((result) => {
@@ -123,7 +114,7 @@ nodoSesion.addEventListener('click', function () {
                         background: "#fff url(BajaVibe/img/fondoSweet.png)",
                     },
                 });
-                nodoRegistro = "Registrarse"
+
 
             } else {
                 Swal.fire({
@@ -146,23 +137,61 @@ nodoSesion.addEventListener('click', function () {
 });
 
 
-/* import { act } from 'react'; */
-/* import { productos } from './js.js'; */
+const botones = document.getElementsByClassName('btn-comprar');
+for (let i = 0; i < botones.length; i++) {
+    botones[i].addEventListener("click", function () {
+        let confirmas = Swal.fire({
+            title: `¿Añadir ${productos[i].nombre} talle tal al carrito ?`,
+            showCancelButton: true,
+            cancelButtonText: "Cancelar",
+            confirmButtonText: "Añadir",
+            confirmButtonColor: "#7dcea0",
+            cancelButtonColor: " #c0392b",
+            customClass: {
+                title: 'titulo-personalizado',
+                content: 'texto-personalizado'
+            },
+            width: 600,
+            padding: "5em",
+            background: "#fff url(BajaVibe/img/fondoSweet.png)",
 
-document.addEventListener("DOMContentLoaded", () => {
-    const botones = document.getElementsByClassName('btn-comprar');
-    console.log("botones.length:", botones.length);
+        }).then((result) => {
+            if (result.isConfirmed) {
+                carrito.push(productos[i]);
+                localStorage.setItem("productos", JSON.stringify(carrito));
+                contador.innerText = carrito.length;
+                Swal.fire({
+                    title: `${productos[i].nombre} añadido al carrito `,
+                    icon: "success",
+                    confirmButtonText: "Ok",
+                    confirmButtonColor: "#fa699d ",
+                    customClass: {
+                        title: 'titulo-personalizado',
+                        content: 'texto-personalizado'
+                    },
+                    width: 600,
+                    padding: "5em",
+                    background: "#fff url(BajaVibe/img/fondoSweet.png)",
+                });
+            } else {
+                Swal.fire({
+                    title: ` Cancelaste la compra de ${productos[i].nombre}`,
+                    icon: "error",
+                    confirmButtonText: "Ok",
+                    confirmButtonColor: "#fa699d ",
+                    customClass: {
+                        title: 'titulo-personalizado',
+                        content: 'texto-personalizado'
+                    },
+                    width: 600,
+                    padding: "5em",
+                    background: "#fff url(BajaVibe/img/fondoSweet.png)",
 
-    botones[0]?.addEventListener("click", () => {
-        console.log("CLICK EN EL BOTÓN 🛍️");
-        Swal.fire({
-            title: "¿Añadir este jean al carrito?",
-            icon: "question",
-            confirmButtonText: "Sí, obvio",
-            cancelButtonText: "No, me arrepentí",
+                });
+            }
         });
     });
-});
+}
 
 
 

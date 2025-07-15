@@ -252,6 +252,7 @@ body {
     margin-left: -1400px;
 }
 
+
 .carousel-control-prev-icon {
     margin-left: -150px;
 }
@@ -292,6 +293,7 @@ body {
     height: 55px;
     border-radius: 30px;
     font-size: 35px;
+    margin-top: 20px;
     margin-left: 190px;
     z-index: 1;
     text-align: center;
@@ -378,4 +380,13 @@ body {
 .fter:hover {
     color: #69aff9;
     z-index: 1;
+}
+
+.titulo-personalizado {
+    font-family: 'Poppins', sans-serif;
+    color: #000000;
+}
+
+.texto-personalizado {
+    font-family: 'Poppins', sans-serif;
 }

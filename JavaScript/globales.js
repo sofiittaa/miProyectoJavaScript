@@ -1,3 +1,9 @@
+export const nodoRegistro = document.getElementById('registro');
+export let usuario = localStorage.getItem("nombre");
+export const nodoSesion = document.querySelector('.btn-sesion');
+export let carrito = JSON.parse(localStorage.getItem("productos")) || [];
+export const contador = document.getElementById("contador-carrito");
+
 export const productos = [
     { nombre: "Jean Acampanado Azul Tiro Bajo", precio: 1499 },
     { nombre: "Jean Recto Azul Lavado Tiro Bajo", precio: 1000 },
