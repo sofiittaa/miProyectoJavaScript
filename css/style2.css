@@ -31,7 +31,7 @@
 body {
     padding-top: 110px;
     z-index: 1;
-    background: url(/BajaVibe/img/fondoHTML.png);
+    background: url(../assets/img/fondoHTML.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -100,24 +100,34 @@ body {
     transition: all 0.3s ease;
 }
 
+
+
 .btn-sesion:hover {
     background-color: #A4D0FF;
     color: #000000;
 }
 
+.cero,
+.pro {
+    margin-top: 8px;
+    z-index: 1;
+    margin-left: 10px;
+}
+
 .carrito {
     font-size: 25px;
     margin-left: 10px;
-    margin-top: 20px;
     font-family: 'Poppins', sans-serif;
     font-weight: 550;
     display: flex;
     color: #FF6B4A;
+
+    border-radius: 100px;
+    width: 165px;
+    height: 50px;
+
 }
 
-.pro {
-    margin-left: 10px;
-}
 
 
 .flecha {
@@ -202,7 +212,7 @@ body {
     margin: 20px;
     border: 5px solid #ec792c;
     display: flex;
-    margin-left: 150px;
+    margin-left: 100px;
     margin-bottom: 30px;
     border-top-right-radius: 7px;
     border-top-left-radius: 7px;
@@ -239,7 +249,7 @@ body {
     margin: 0 auto;
     border: 5px solid #ec792c;
     display: flex;
-    margin-left: 150px;
+    margin-left: 110px;
     margin-top: 30px;
     margin-bottom: 30px;
     border-top-right-radius: 7px;
@@ -266,10 +276,11 @@ body {
 .info-producto {
     margin-left: 500px;
     margin-top: -650px;
-    width: 500px;
+    width: 560px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding: 20px;
     border-radius: 50px;
     background: linear-gradient(10deg, #fb9b5b 0%, #9dc2f7 100%);
 }
@@ -281,6 +292,9 @@ body {
     gap: 60px;
     padding: -15px;
     flex-wrap: wrap;
+    font-size: 18px;
+    margin-left: 100px;
+
 }
 
 .precio {
@@ -311,9 +325,10 @@ body {
 }
 
 .talle-btn {
-    margin-left: 35px;
-    width: 50px;
-    height: 50px;
+    margin-left: 20px;
+    width: 250px;
+    font-size: 25px;
+    height: 60px;
     border: 2px solid #FF6B4A;
     background-color: #FF6B4A;
     color: #ffe5e5;
@@ -330,10 +345,7 @@ body {
     z-index: 1;
 }
 
-.talle-btn.selected {
-    background-color: #dbecff;
-    z-index: 1;
-}
+
 
 .desc {
     font-family: 'Poppins', sans-serif;
@@ -349,7 +361,7 @@ body {
 }
 
 .btn-comprar {
-    margin-left: 170px;
+    margin-left: 280px;
     font-family: 'Poppins', sans-serif;
     font-weight: 550;
     font-size: 25px;
@@ -358,9 +370,10 @@ body {
     cursor: pointer;
     color: #fff1f1;
     border-radius: 99px;
-    width: 150px;
+    width: 220px;
     height: 60px;
     margin-bottom: 40px;
+    margin-top: -95px;
     z-index: 1;
 }
 
@@ -389,4 +402,5 @@ body {
 
 .texto-personalizado {
     font-family: 'Poppins', sans-serif;
+    color: #000000;
 }

@@ -1,107 +1,123 @@
-import { usuario, contador, carrito, } from '/JavaScript/globales.js';
 
-if (contador) {
-    contador.innerText = carrito.length;
-}
+let carrito = JSON.parse(localStorage.getItem("productos")) || [];
+let usuario = localStorage.getItem("nombre") || "Clientaza";
+let contador = document.getElementById("contador-carrito");
+let productos = [];
+const tallesElegidos = {};
 
-actualizar();
+contador.textContent = carrito.length;
 
-function actualizar() {
-    if (usuario) {
+
+Swal.fire({
+    title: `¡Hola ${usuario}!`,
+    text: "Elegí tu jean favorito y el talle perfecto",
+    confirmButtonColor: "#fc7e30ff",
+    background: "#fff url('../assets/img/fondoSweet.png')",
+    customClass: {
+        title: 'titulo-personalizado',
+        content: 'texto-personalizado',
+    },
+});
+
+async function cargarProductos() {
+    try {
+        const res = await fetch("../JSON/productos.json");
+        if (!res.ok) throw new Error("No se pudo cargar el archivo JSON");
+        productos = await res.json();
+    } catch (error) {
         Swal.fire({
-            title: `Bienvenidx de nuevo ${usuario}`,
-            confirmButtonText: "¡Hola!",
-            confirmButtonColor: "rgb(255, 125, 44)",
-            width: 600,
-            padding: "5em",
-            background: " #fff url(BajaVibe/img/fondoSweet.png)",
+            title: "Error al cargar productos",
+            text: error.message,
+            icon: "error",
+            confirmButtonColor: "#fc7e30ff",
+            background: "#fff url('../assets/img/fondoSweet.png')",
             customClass: {
                 title: 'titulo-personalizado',
-                content: 'texto-personalizado'
+                content: 'texto-personalizado',
             },
         });
     }
 }
 
-const productos = [
-    { nombre: "Jean Acampanado Azul Tiro Bajo", precio: 1499, talle: null },
-    { nombre: "Jean Recto Azul Lavado Tiro Bajo", precio: 1000, talle: null },
-    { nombre: "Jean recto Negro Tiro Medio", precio: 1200, talle: null },
-    { nombre: "Jean baggy ancho Celeste Lavado tiro alto", precio: 1299, talle: null },
-    { nombre: "Jean campana Celeste Lavado Tiro bajo", precio: 999, talle: null },
-    { nombre: "Jean recto Azul Tiro alto", precio: 1899, talle: null },
-    { nombre: "Jean Baggy Beige Tiro Alto", precio: 2000, talle: null },
-    { nombre: "Jean Recto Negro Tiro Alto", precio: 1500, talle: null },
-    { nombre: "Jean Recto Azul Lavado Tiro Alto", precio: 1200, talle: null },
-    { nombre: "jean Recto Celeste Lavado Tiro Alto", precio: 1000, talle: null },
-    { nombre: "Jean Baggy Azul Lavado Tiro Medio", precio: 799, talle: null },
-];
+{
+    document.querySelectorAll('.talle-btn').forEach((boton) => {
+        const id = boton.dataset.id;
+        boton.addEventListener("click", () => {
+            Swal.fire({
+                title: "Selecciona un talle",
+                input: "select",
+                inputOptions: { s: 'S', m: 'M', l: 'L', xl: 'XL' },
+                inputPlaceholder: 'Selecciona un talle',
+                confirmButtonColor: "#fc7e30ff",
+                background: "#fff url('../assets/img/fondoSweet.png')",
+                customClass: {
+                    title: 'titulo-personalizado',
+                    content: 'texto-personalizado',
+                },
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    tallesElegidos[id] = result.value;
+                }
+            });
+        });
+    });
 
+    document.querySelectorAll('.btn-comprar').forEach((boton) => {
+        const id = boton.dataset.id;
+        boton.addEventListener("click", () => {
+            const producto = productos.find(p => p.id == id);
+            const talle = tallesElegidos[id];
 
-const talleSeleccionado = document.querySelectorAll('.talle-btn');
-talleSeleccionado.addEventListener("click", function () {
-    if (talleSeleccionado) {
-        talleSeleccionado.style.backgroundColor = "#800020";
-        productos[i].talle = talleSeleccionado.textContent;
-    } else {
-        console.log("no existe tal boton")
-    }
-});
-
-
-
-const botones = document.getElementsByClassName('btn-comprar');
-for (let i = 0; i < botones.length; i++) {
-    botones[i].addEventListener("click", function () {
-        Swal.fire({
-            title: `¿Añadir ${productos[i].nombre} talle - por ${productos[i].precio} al carrito ?`,
-            showCancelButton: true,
-            cancelButtonText: "Cancelar",
-            confirmButtonText: "Añadir",
-            confirmButtonColor: " #619ddd",
-            cancelButtonColor: "rgb(236, 143, 57)",
-            customClass: {
-                title: 'titulo-personalizado',
-                content: 'texto-personalizado'
-            },
-            width: 600,
-            padding: "5em",
-            background: "#fff url(BajaVibe/img/fondoSweet.png)",
-
-        }).then((result) => {
-            if (result.isConfirmed) {
-                carrito.push(productos[i]);
-                localStorage.setItem("productos", JSON.stringify(carrito));
-                contador.innerText = carrito.length;
-                Swal.fire({
-                    title: `${productos[i].nombre} añadido al carrito `,
-                    icon: "success",
+            if (!talle) {
+                return Swal.fire({
+                    title: "Selecciona un talle antes de comprar",
+                    icon: "warning",
                     confirmButtonText: "Ok",
-                    confirmButtonColor: "rgba(235, 141, 53, 1)",
+                    confirmButtonColor: "#619ddd",
+                    background: "#fff url('../assets/img/fondoSweet.png')",
                     customClass: {
                         title: 'titulo-personalizado',
-                        content: 'texto-personalizado'
+                        content: 'texto-personalizado',
                     },
-                    width: 600,
-                    padding: "5em",
-                    background: "#fff url(BajaVibe/img/fondoSweet.png)",
-                });
-            } else {
-                Swal.fire({
-                    title: ` Cancelaste la compra de ${productos[i].nombre}`,
-                    icon: "error",
-                    confirmButtonText: "Ok",
-                    confirmButtonColor: "rgba(235, 141, 53, 1)",
-                    customClass: {
-                        title: 'titulo-personalizado',
-                        content: 'texto-personalizado'
-                    },
-                    width: 600,
-                    padding: "5em",
-                    background: "#fff url(BajaVibe/img/fondoSweet.png)",
-
                 });
             }
+
+            Swal.fire({
+                title: `${producto.nombre} talle ${talle} añadido al carrito por $${producto.precio}`,
+                icon: "success",
+                showCancelButton: true,
+                confirmButtonText: "Añadir al carrito",
+                cancelButtonText: "Cancelar",
+                confirmButtonColor: "#619ddd",
+                cancelButtonColor: "rgba(235, 141, 53, 1)",
+                background: "#fff url('../assets/img/fondoSweet.png')",
+                customClass: {
+                    title: 'titulo-personalizado',
+                    content: 'texto-personalizado',
+                },
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    carrito.push({ ...producto, talle });
+                    localStorage.setItem("productos", JSON.stringify(carrito));
+                    contador.textContent = carrito.length;
+                } else {
+                    Swal.fire({
+                        title: `Cancelaste la compra de ${producto.nombre}`,
+                        icon: "error",
+                        confirmButtonText: "Ok",
+                        confirmButtonColor: "#619ddd",
+                        background: "#fff url('../assets/img/fondoSweet.png')",
+                        customClass: {
+                            title: 'titulo-personalizado',
+                            content: 'texto-personalizado',
+                        },
+                    });
+                }
+            });
         });
     });
 }
+
+
+
+cargarProductos();

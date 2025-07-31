@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "nombre": "Jean Acampanado Azul Tiro Bajo",
+        "precio": 1499,
+        "talle": null
+    },
+    {
+        "id": 2,
+        "nombre": "Jean Recto Azul Lavado Tiro Bajo",
+        "precio": 1000,
+        "talle": null
+    },
+    {
+        "id": 3,
+        "nombre": "Jean recto Negro Tiro Medio",
+        "precio": 1200,
+        "talle": null
+    },
+    {
+        "id": 4,
+        "nombre": "Jean baggy ancho Celeste Lavado tiro alto",
+        "precio": 1299,
+        "talle": null
+    },
+    {
+        "id": 5,
+        "nombre": "Jean campana Celeste Lavado Tiro bajo",
+        "precio": 999,
+        "talle": null
+    },
+    {
+        "id": 6,
+        "nombre": "Jean recto Azul Tiro alto",
+        "precio": 1899,
+        "talle": null
+    },
+    {
+        "id": 7,
+        "nombre": "Jean Baggy Beige Tiro Alto",
+        "precio": 2000,
+        "talle": null
+    },
+    {
+        "id": 8,
+        "nombre": "Jean Recto Negro Tiro Alto",
+        "precio": 1500,
+        "talle": null
+    },
+    {
+        "id": 9,
+        "nombre": "Jean Recto Azul Lavado Tiro Alto",
+        "precio": 1200,
+        "talle": null
+    },
+    {
+        "id": 10,
+        "nombre": "jean Recto Celeste Lavado Tiro Alto",
+        "precio": 1000,
+        "talle": null
+    },
+    {
+        "id": 11,
+        "nombre": "Jean Baggy Azul Lavado Tiro Medio",
+        "precio": 799,
+        "talle": null
+    },
+    {
+        "id": 12,
+        "nombre": "Jean Baggy Celeste Lavado Tiro Medio",
+        "precio": 799,
+        "talle": null
+    }
+]

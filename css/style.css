@@ -225,34 +225,149 @@ body::before {
 
 
 .btn-comprar {
-    margin-left: 170px;
     font-family: 'Italiana', serif;
     font-size: 25px;
     border: none;
     background-color: #FF6B4A;
-    margin-top: 30px;
-    border-top-right-radius: 7px;
-    border-top-left-radius: 7px;
-    border-bottom-right-radius: 7px;
-    border-bottom-left-radius: 7px;
-    margin-bottom: 40px;
+    margin: 30px auto;
+    padding: 12px 30px;
+    border-radius: 12px;
     z-index: 10;
     cursor: pointer;
-    position: relative;
     color: #3A2E2E;
+    display: block;
+    transition: 0.3s ease;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
 }
 
 .btn-comprar:hover {
     background-color: #A4D0FF;
+    transform: scale(1.05);
 }
 
-.precio {
-    font-size: 25px;
+
+.contentF {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.compra {
+    margin-top: -249px;
+    margin-left: 610px;
+    padding: 40px 20px;
+    text-align: center;
+    color: #eb6f1d;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
+    z-index: 1;
+    background-color: #DDEBFF;
+    border-top: 3px dashed #ff7f62;
+    border-bottom: 3px dashed #ff7f62;
+    border-radius: 10px;
+    width: 500px;
+    height: 248px;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+.btn-comprar2 {
     font-family: 'Italiana', serif;
-    margin-left: 310px;
-    margin-top: -78px;
-    z-index: 18;
+    font-size: 18px;
+    font-weight: 600;
+    border: none;
+    background-color: #FF6B4A;
+    margin: 13px auto;
+    padding: 12px 30px;
+    border-radius: 12px;
+    z-index: 10;
+    cursor: pointer;
     color: #3A2E2E;
+    display: block;
+    transition: 0.3s ease;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contacto {
+    margin-top: 100px;
+    display: flex;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
+    background-color: #DDEBFF;
+    border-top: 3px dashed #ff7f62;
+    border-bottom: 3px dashed #ff7f62;
+    border-radius: 10px;
+    width: 450px;
+    margin-left: -650px;
+    z-index: 1;
+}
+
+.queEs {
+    margin-top: 20px;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
+    color: #4483b7;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+}
+
+.enlace {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
+    color: #f46d2e;
+    text-decoration: none;
+    margin-left: 15px;
+    text-align: center;
+    display: block;
+    margin-top: 6px;
+    padding: 8px 10px;
+    font-size: 14px;
+    border-radius: 8px;
+
+}
+
+.enlaces {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
+    color: #f46d2e;
+    text-decoration: none;
+    font-size: 18px;
+    margin-left: -50px;
+    display: block;
+    margin-top: 19px;
+
+}
+
+.text2 {
+    font-size: 18px;
+    margin-left: 30px;
+    margin-top: -10px;
+    color: #ec792c;
+    z-index: -2;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 550;
+}
+
+.flex {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: max-content;
+    margin-top: 50px;
+}
+
+.fila-form {
+    display: flex;
+    flex-direction: row;
 }
 
 .foo {

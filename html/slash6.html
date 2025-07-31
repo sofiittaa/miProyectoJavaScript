@@ -23,10 +23,9 @@
 
             <div class="left-section">
                 <a href="../index.html"><button class="flecha">←</button></a>
-                <img class="perfil" src="../BajaVibe/img/perfil.png" alt="Perfil">
+                <img class="perfil" src="../assets/img/perfil.png" alt="Perfil">
                 <a id="registro" class="registro" href="#">Registro</a>
-                <button class="btn-sesion" id="Cerrar" onclick="borrar()">Cerrar
-                    Sesion</button>
+
             </div>
 
             <div>
@@ -34,7 +33,8 @@
                 <p class="text">Minimal vibes, maximal presence</p>
             </div>
             <div class="carrito">
-                🛒 <span id="contador-carrito">0</span> productos
+                <span class="cero" id="contador-carrito">🛒 0</span>
+                <p class="pro">productos</p>
             </div>
 
         </div>
@@ -77,13 +77,11 @@
 
                 </p>
                 <div class="talles">
-                    <button class="talle-btn">XS</button>
-                    <button class="talle-btn">S</button>
-                    <button class="talle-btn">M</button>
-                    <button class="talle-btn">L</button>
-                    <button class="talle-btn">XL</button>
+                    <button class="talle-btn" data-id="6">seleccionar talle</button>
+
                 </div>
-                <button class="btn-comprar" onclick="comprar()">Comprar</button>
+                <button class="btn-comprar" data-id="6">Añadir al
+                    carrito</button>
             </div>
 
         </div>
