@@ -1,4 +1,3 @@
-
 export const formulario = document.getElementById("formulario");
 
 let carrito = JSON.parse(localStorage.getItem("productos")) || [];
@@ -7,10 +6,8 @@ const nodoRegistro = document.getElementById('registro');
 export let usuario = localStorage.getItem("nombre") || "";
 export let gmail = localStorage.getItem("gmail") || "";
 const nodoSesion = document.getElementById('btn-sesion');
-export const nodoCarrito = document.querySelectorAll('carrito');
-export const nodosCarrito = document.querySelectorAll('.pro ');
-
-
+export const nodoCarrito = document.querySelectorAll('.carrito'); // ← Acordate: tiene que tener el punto si es clase
+export const nodosCarrito = document.querySelectorAll('.pro');
 
 if (contador) {
     contador.innerText = carrito.length;
@@ -35,7 +32,6 @@ function actualizar() {
 
         if (nodoRegistro) nodoRegistro.innerText = usuario;
         if (nodoSesion) nodoSesion.innerText = "Cerrar Sesión";
-
     } else {
         if (nodoRegistro) nodoRegistro.innerText = "Registrarse";
         if (nodoSesion) nodoSesion.innerText = "Iniciar Sesión";
@@ -45,12 +41,11 @@ function actualizar() {
 
 if (nodoSesion) {
     nodoSesion.addEventListener('click', function () {
-
         if (!usuario) {
             Swal.fire({
                 title: "¡Regístrate!",
                 html: `<input type="text" id="swal-nombre" class="swal2-input" placeholder="Nombre">
-                <input type="text" id="swal-gmail" class="swal2-input" placeholder="Gmail">`,
+                       <input type="text" id="swal-gmail" class="swal2-input" placeholder="Gmail">`,
                 confirmButtonText: "Enviar",
                 cancelButtonText: "Cancelar",
                 confirmButtonColor: " #619ddd",
@@ -59,7 +54,6 @@ if (nodoSesion) {
                     title: 'titulo-personalizado',
                     content: 'texto-personalizado'
                 },
-
                 width: 600,
                 padding: "5em",
                 background: "#fff url('../assets/img/fondoSweet.png')",
@@ -83,8 +77,8 @@ if (nodoSesion) {
                     localStorage.setItem("nombre", usuario);
                     localStorage.setItem("gmail", gmail);
                     nodoRegistro.innerText = `${usuario}`;
-
                     nodoSesion.innerText = "Cerrar Sesión";
+
                     Swal.fire({
                         title: `¡¡Bienvenidx ${usuario} a mi tienda de ropa!!`,
                         icon: "success",
@@ -93,14 +87,12 @@ if (nodoSesion) {
                             title: 'titulo-personalizado',
                             content: 'texto-personalizado'
                         },
-
                         width: 600,
                         padding: "5em",
                         background: "#fff url('../assets/img/fondoSweet.png')",
                     });
                 }
             });
-
         } else {
             Swal.fire({
                 title: "¿Estás segurx de cerrar sesión?",
@@ -113,18 +105,18 @@ if (nodoSesion) {
                     title: 'titulo-personalizado',
                     content: 'texto-personalizado'
                 },
-                confirmButtonColor: " #619ddd",
                 width: 600,
                 padding: "5em",
                 background: "#fff url('../assets/img/fondoSweet.png')",
             }).then((result) => {
                 if (result.isConfirmed) {
                     localStorage.removeItem("nombre");
-                    usuario = null;
                     localStorage.removeItem("productos");
+                    usuario = null;
                     nodoRegistro.innerText = "Registrarse";
-                    nodoSesion.innerText = "Iniciar Sesión"
+                    nodoSesion.innerText = "Iniciar Sesión";
                     if (contador) contador.innerText = "0";
+
                     Swal.fire({
                         title: "Tu sesión se ha cerrado",
                         icon: "success",
@@ -137,8 +129,6 @@ if (nodoSesion) {
                         padding: "5em",
                         background: "#fff url('../assets/img/fondoSweet.png')",
                     });
-
-
                 } else {
                     Swal.fire({
                         title: "Tu sesión sigue activa",
@@ -157,8 +147,8 @@ if (nodoSesion) {
             });
         }
     });
-
 }
+
 if (nodosCarrito.length > 0) {
     for (let i = 0; i < nodosCarrito.length; i++) {
         nodosCarrito[i].addEventListener('click', function () {
@@ -178,17 +168,14 @@ if (nodosCarrito.length > 0) {
                     background: "#fff url('../assets/img/fondoSweet.png')",
                 });
             } else {
-
                 Swal.fire({
                     title: "Carrito de compras",
-                    colorText: "#0000",
-                    text: `Productos:
-                        ${carrito.map(producto => `${producto.nombre} - $${producto.precio}  `).join('')}`,
+                    text: `Productos: ${carrito.map(producto => `${producto.nombre} - $${producto.precio}`).join(' | ')}`,
                     icon: "info",
                     showCancelButton: true,
-                    confirmButtonText: "Comprar",
+                    confirmButtonText: "Vaciar Carrito",
                     confirmButtonColor: "#619ddd",
-                    cancelButtonText: "Vaciar carrito",
+                    cancelButtonText: "Comprar",
                     cancelButtonColor: "rgb(236, 143, 57)",
                     customClass: {
                         title: 'titulo-personalizado',
@@ -199,6 +186,23 @@ if (nodosCarrito.length > 0) {
                     background: "#fff url('../assets/img/fondoSweet.png')",
                 }).then((result) => {
                     if (result.isConfirmed) {
+                        carrito = [];
+                        localStorage.removeItem("productos");
+                        if (contador) contador.innerText = "0";
+
+                        Swal.fire({
+                            title: "Carrito vaciado",
+                            icon: "success",
+                            confirmButtonColor: "#619ddd",
+                            background: "#fff url('../assets/img/fondoSweet.png')",
+                            customClass: {
+                                title: 'titulo-personalizado',
+                                content: 'texto-personalizado',
+                            },
+                            width: 600,
+                            padding: "5em",
+                        });
+                    } else if (result.dismiss) {
                         Swal.fire({
                             title: "Completa los datos para finalizar la compra ",
                             text: "↓ ↓",
@@ -212,29 +216,10 @@ if (nodosCarrito.length > 0) {
                             padding: "5em",
                             background: "#fff url('../assets/img/fondoSweet.png')",
                         });
-
-                    } else if (result.dismiss) {
-
-                        carrito = [];
-                        localStorage.removeItem("productos");
-                        if (contador) contador.innerText = "0";
-                        Swal.fire({
-                            title: "Carrito vaciado",
-                            icon: "success",
-                            confirmButtonColor: "#619ddd",
-                            background: "#fff url('../assets/img/fondoSweet.png')",
-                            customClass: {
-                                title: 'titulo-personalizado',
-                                content: 'texto-personalizado',
-                            },
-                            width: 600,
-                            padding: "5em",
-                        });
                     }
                 });
             }
-        }
-        );
+        });
     }
 }
 
@@ -265,7 +250,7 @@ formulario.addEventListener("submit", (e) => {
 
     Swal.fire({
         title: "¡Gracias por tu compra!",
-        text: `${nombre} tus productos serán enviados a ${direccion} en un plazo de 3 a 5 días hábiles, en cuanto el pedido este en tu puerta, te llamaremos a ${telefono}.`,
+        text: `${nombre}, tus productos serán enviados a ${direccion} en un plazo de 3 a 5 días hábiles. Te llamaremos a ${telefono}.`,
         icon: "success",
         confirmButtonText: "Aceptar",
         confirmButtonColor: "#619ddd",
@@ -279,20 +264,5 @@ formulario.addEventListener("submit", (e) => {
     });
 
     localStorage.removeItem("productos");
-
     if (contador) contador.innerText = "0";
-
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
