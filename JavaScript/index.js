@@ -2,11 +2,11 @@ export const formulario = document.getElementById("formulario");
 
 let carrito = JSON.parse(localStorage.getItem("productos")) || [];
 export let contador = document.getElementById("contador-carrito");
-const nodoRegistro = document.getElementById('registro');
+export const nodoRegistro = document.getElementById('registro');
 export let usuario = localStorage.getItem("nombre") || "";
 export let gmail = localStorage.getItem("gmail") || "";
 const nodoSesion = document.getElementById('btn-sesion');
-export const nodoCarrito = document.querySelectorAll('.carrito'); // ← Acordate: tiene que tener el punto si es clase
+export const nodoCarrito = document.querySelectorAll('.carrito'); a
 export const nodosCarrito = document.querySelectorAll('.pro');
 
 if (contador) {
@@ -45,7 +45,7 @@ if (nodoSesion) {
             Swal.fire({
                 title: "¡Regístrate!",
                 html: `<input type="text" id="swal-nombre" class="swal2-input" placeholder="Nombre">
-                       <input type="text" id="swal-gmail" class="swal2-input" placeholder="Gmail">`,
+                       <input type="text" id="swal-gmail" class="swal2-input" placeholder="Gmail" required="@">`,
                 confirmButtonText: "Enviar",
                 cancelButtonText: "Cancelar",
                 confirmButtonColor: " #619ddd",

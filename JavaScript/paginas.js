@@ -1,12 +1,12 @@
-
 let carrito = JSON.parse(localStorage.getItem("productos")) || [];
-let usuario = localStorage.getItem("nombre") || "Clientaza";
+let usuario = localStorage.getItem("nombre") || "Cliente";
 let contador = document.getElementById("contador-carrito");
 let productos = [];
 const tallesElegidos = {};
+let nodoRegistro = document.getElementById("registro");
+nodoRegistro.textContent = usuario;
 
 contador.textContent = carrito.length;
-
 
 Swal.fire({
     title: `¡Hola ${usuario}!`,
@@ -83,7 +83,7 @@ async function cargarProductos() {
             }
 
             Swal.fire({
-                title: `${producto.nombre} talle ${talle} añadido al carrito por $${producto.precio}`,
+                title: `¿Añadir ${producto.nombre} talle ${talle} por $${producto.precio} al carrito?`,
                 icon: "success",
                 showCancelButton: true,
                 confirmButtonText: "Añadir al carrito",
